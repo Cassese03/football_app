@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+import 'package:football_app/constants.dart';
+import 'package:iconsax/iconsax.dart';
+
+class AppbarAll extends StatelessWidget implements PreferredSizeWidget {
+  const AppbarAll({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      leading: IconButton(
+        onPressed: () {},
+        icon: const Icon(Iconsax.category),
+      ),
+      title: const Row(
+        children: [
+          Spacer(),
+          Text(
+            "F",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Icon(
+            Icons.sports_soccer,
+            color: kprimaryColor,
+          ),
+          Icon(
+            Icons.sports_soccer,
+            color: kprimaryColor,
+          ),
+          Text(
+            "tball  ",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            "Frontier",
+            style: TextStyle(
+              color: kprimaryColor,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Spacer(),
+        ],
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Iconsax.notification),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
