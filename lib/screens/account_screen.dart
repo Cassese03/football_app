@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/common/appbar.dart';
 import 'package:football_app/constants.dart';
+import 'package:badges/badges.dart' as badges;
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -25,20 +26,41 @@ class _AccountScreenState extends State<AccountScreen> {
                   CircleAvatar(
                     backgroundColor: kbackgroundColor,
                     radius: 100,
-                    child: Image.asset(
-                      'assets/images/arsenal.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  const Positioned(
-                    top: 0,
-                    right: 0,
-                    child: Icon(
-                      size: 26,
-                      Icons.edit,
+                    child: badges.Badge(
+                      position: badges.BadgePosition.topEnd(),
+                      badgeContent: const Icon(
+                        Icons.edit,
+                      ),
+                      badgeStyle: const badges.BadgeStyle(
+                        badgeColor: Colors.white,
+                      ),
+                      onTap: () async {
+                        // mark the function as async
+                        print('tap');
+                        // Show PopUp
+
+                        // await the dialog
+                        await showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return const AlertDialog(
+                              title: Text(
+                                'About',
+                                style: TextStyle(fontFamily: "Smash"),
+                              ),
+                              content: Text(
+                                'This is a placeholder. This is a placeholder. This is a placeholder. This is a placeholder.',
+                                style: TextStyle(fontFamily: "Smash"),
+                              ),
+                            );
+                          },
+                        );
+                        Navigator.pop(context);
+                      },
+                      child: Image.asset(
+                        'assets/images/arsenal.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   const Spacer(),
