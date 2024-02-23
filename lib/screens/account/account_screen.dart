@@ -4,6 +4,8 @@ import 'package:football_app/common/appbar.dart';
 import 'package:football_app/constants.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:football_app/screens/account/bloc/account_bloc.dart';
+import 'package:football_app/widgets/profile_card.dart';
+import 'package:football_app/widgets/stats.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -151,31 +153,32 @@ class _AccountScreenState extends State<AccountScreen> {
   // ignore: non_constant_identifier_names
   Container Fetched(BuildContext context) {
     return Container(
-      color: kprimaryColor,
+      color: kbackgroundColor,
       child: Column(
         children: [
           Expanded(
-            flex: 50,
+            flex: 20,
             child: Row(
               children: [
                 const Spacer(),
-                CircleAvatar(
-                  backgroundColor: kbackgroundColor,
-                  radius: 100,
-                  child: badges.Badge(
-                    position: badges.BadgePosition.topEnd(),
-                    badgeContent: const Icon(
-                      Icons.edit,
-                    ),
-                    badgeStyle: const badges.BadgeStyle(
-                      badgeColor: Colors.white,
-                    ),
-                    onTap: () async {
-                      context.read<AccountBloc>().add(AccountEdit());
-                    },
-                    child: Image.asset(
-                      'assets/images/arsenal.png',
-                      fit: BoxFit.cover,
+                badges.Badge(
+                  position: badges.BadgePosition.topEnd(),
+                  badgeContent: const Icon(
+                    Icons.edit,
+                  ),
+                  badgeStyle: const badges.BadgeStyle(
+                    badgeColor: Colors.white,
+                  ),
+                  onTap: () async {
+                    context.read<AccountBloc>().add(AccountEdit());
+                  },
+                  child: const Center(
+                    child: CircleAvatar(
+                      backgroundColor: kprimaryColor,
+                      minRadius: 100,
+                      foregroundImage: AssetImage(
+                        'assets/images/pl.png',
+                      ),
                     ),
                   ),
                 ),
@@ -184,31 +187,20 @@ class _AccountScreenState extends State<AccountScreen> {
             ),
           ),
           const Expanded(
-            flex: 50,
+            flex: 10,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Expanded(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Spacer(),
                       Text(
                         style: TextStyle(
-                          color: Colors.brown,
-                          fontSize: 24,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
                         ),
-                        'Nome',
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                        ),
-                        'Lorenzo',
+                        'Lorenzo Cassese',
                       ),
                       Spacer(),
                     ],
@@ -221,78 +213,131 @@ class _AccountScreenState extends State<AccountScreen> {
                       Spacer(),
                       Text(
                         style: TextStyle(
-                          color: Colors.brown,
-                          fontSize: 24,
-                        ),
-                        'Cognome',
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        style: TextStyle(
                           color: Colors.white,
-                          fontSize: 24,
+                          fontSize: 16,
                         ),
-                        'Cassese',
+                        'Difensore Raimon',
                       ),
                       Spacer(),
                     ],
                   ),
                 ),
+              ],
+            ),
+          ),
+          const Expanded(
+            flex: 35,
+            child: Column(
+              children: [
                 Expanded(
+                  flex: 50,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Spacer(),
-                      Text(
-                        style: TextStyle(
-                          color: Colors.brown,
-                          fontSize: 24,
+                      Expanded(
+                        flex: 50,
+                        child: ProfileCard(
+                          numero: 2,
+                          content: 'Partite Vinte',
                         ),
-                        'Ruolo',
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
+                      Expanded(
+                        flex: 50,
+                        child: ProfileCard(
+                          numero: 1,
+                          content: 'Partite Perse',
                         ),
-                        'Difensore',
                       ),
-                      Spacer(),
                     ],
                   ),
                 ),
                 Expanded(
+                  flex: 50,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Spacer(),
-                      Text(
-                        style: TextStyle(
-                          color: Colors.brown,
-                          fontSize: 24,
+                      Expanded(
+                        child: ProfileCard(
+                          numero: 3,
+                          content: 'Partite Giocate',
                         ),
-                        'Squadra',
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                        ),
-                        'Raimon Nola',
-                      ),
-                      Spacer(),
                     ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Expanded(
+            flex: 5,
+            child: Row(
+              children: [
+                Text(
+                  "Statistiche Personali",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.brown,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Spacer(),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 50,
+            child: ListView(
+              shrinkWrap: true,
+              primary: false,
+              children: const [
+                Stats(
+                  logo: "assets/images/arsenal.png",
+                  title: "Lorenzo Cassese",
+                  content: "Posizione : Difensore",
+                  icon: Icon(
+                    Icons.stars_outlined,
+                    size: 28,
+                    color: kprimaryColor,
+                  ),
+                ),
+                Stats(
+                  logo: "assets/images/swansea.png",
+                  title: "Gol",
+                  content: "2",
+                  icon: Icon(
+                    Icons.stars_outlined,
+                    size: 28,
+                    color: kprimaryColor,
+                  ),
+                ),
+                Stats(
+                  logo: "assets/images/west_ham.png",
+                  title: "Assist",
+                  content: "4",
+                  icon: Icon(
+                    Icons.stars_outlined,
+                    size: 28,
+                    color: kprimaryColor,
+                  ),
+                ),
+                Stats(
+                  logo: "assets/images/pl.png",
+                  title: "Presenze",
+                  content: "4",
+                  icon: Icon(
+                    Icons.stars_outlined,
+                    size: 28,
+                    color: kprimaryColor,
+                  ),
+                ),
+                Stats(
+                  logo: "assets/images/tottenham.png",
+                  title: "Ranking",
+                  content: "10°",
+                  icon: Icon(
+                    Icons.stars_outlined,
+                    size: 28,
+                    color: kprimaryColor,
+                  ),
+                ),
               ],
             ),
           ),
