@@ -1,0 +1,12 @@
+com.example.football_app-jetified-annotation-experimental-1.1.0-0 C:\Users\hdsvi\.gradle\caches\transforms-3\2cec17a2d47f950880a2bdca5c2f7ede\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.football_app-core-1.6.0-1 C:\Users\hdsvi\.gradle\caches\transforms-3\8b8b858c35be63ea4749b8a79584746a\transformed\core-1.6.0\res
+com.example.football_app-jetified-window-java-1.0.0-beta04-2 C:\Users\hdsvi\.gradle\caches\transforms-3\9d715a3e53dde034ffb5234a22d1ea91\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.football_app-jetified-window-1.0.0-beta04-3 C:\Users\hdsvi\.gradle\caches\transforms-3\a1b5722cdb4b3d7ab48b0a0017d27ebc\transformed\jetified-window-1.0.0-beta04\res
+com.example.football_app-debug-4 C:\xampp\htdocs\football_app\android\app\src\debug\res
+com.example.football_app-main-5 C:\xampp\htdocs\football_app\android\app\src\main\res
+com.example.football_app-pngs-6 C:\xampp\htdocs\football_app\build\app\generated\res\pngs\debug
+com.example.football_app-resValues-7 C:\xampp\htdocs\football_app\build\app\generated\res\resValues\debug
+com.example.football_app-rs-8 C:\xampp\htdocs\football_app\build\app\generated\res\rs\debug
+com.example.football_app-mergeDebugResources-9 C:\xampp\htdocs\football_app\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.football_app-mergeDebugResources-10 C:\xampp\htdocs\football_app\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.football_app-merged_res-11 C:\xampp\htdocs\football_app\build\app\intermediates\merged_res\debug
