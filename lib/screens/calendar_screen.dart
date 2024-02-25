@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/common/appbar.dart';
-import 'package:football_app/constants.dart';
-import 'package:football_app/widgets/upcoming_match.dart';
+import 'package:football_app/widgets/giornata.dart';
+import 'package:football_app/widgets/upcoming_lorenzo.dart';
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen({super.key});
@@ -24,7 +24,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
               child: Row(
                 children: [
                   Text(
-                    "Up-Coming Matches",
+                    "Calendario",
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.grey.shade800,
@@ -32,22 +32,18 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     ),
                   ),
                   const Spacer(),
-                  TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(foregroundColor: kprimaryColor),
-                    child: const Text("See all"),
-                  )
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 7),
               child: ListView(
                 shrinkWrap: true,
                 primary: false,
                 physics: const NeverScrollableScrollPhysics(),
                 children: const [
-                  UpComingMatch(
+                  Giornata(),
+                  UpComingLorenzo(
                     awayLogo: "assets/images/man_united.png",
                     awayTitle: "Man United",
                     homeLogo: "assets/images/liverpool.png",
@@ -56,7 +52,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     time: "06:30",
                     isFavorite: true,
                   ),
-                  UpComingMatch(
+                  UpComingLorenzo(
                     awayLogo: "assets/images/swansea.png",
                     awayTitle: "Swansea AFC",
                     homeLogo: "assets/images/tottenham.png",
@@ -65,7 +61,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     time: "06:30",
                     isFavorite: false,
                   ),
-                  UpComingMatch(
+                  UpComingLorenzo(
                     awayLogo: "assets/images/stoke.png",
                     awayTitle: "Stoke City",
                     homeLogo: "assets/images/arsenal.png",
@@ -74,7 +70,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     time: "06:30",
                     isFavorite: false,
                   ),
-                  UpComingMatch(
+                  UpComingLorenzo(
                     awayLogo: "assets/images/southampton.png",
                     awayTitle: "Southhampton",
                     homeLogo: "assets/images/sunderland.png",

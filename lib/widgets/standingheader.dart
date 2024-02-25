@@ -24,7 +24,7 @@ class StandingHeader extends StatelessWidget {
           ),
           child: const Row(
             children: [
-              SizedBox(width: 20),
+              SizedBox(width: 15),
               Expanded(
                 flex: 65,
                 child: Row(
@@ -58,7 +58,7 @@ class StandingHeader extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          'GS',
+                          'W',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 18,
@@ -71,7 +71,7 @@ class StandingHeader extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          'GC',
+                          'L',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 18,

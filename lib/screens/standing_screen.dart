@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:football_app/common/appbar.dart';
+import 'package:football_app/constants.dart';
 import 'package:football_app/widgets/standing.dart';
-import 'package:football_app/widgets/standingheader.dart';
+import 'package:football_app/widgets/standing_head.dart';
 
 class StandingScreen extends StatefulWidget {
   const StandingScreen({super.key});
@@ -20,19 +20,20 @@ class _StandingScreenState extends State<StandingScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(20),
+            const Padding(
+              padding: EdgeInsets.all(15),
               child: Row(
                 children: [
+                  Spacer(),
                   Text(
-                    "Standing Lead",
+                    "Classifica",
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.grey.shade800,
+                      color: kprimaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Spacer(),
+                  Spacer(),
                 ],
               ),
             ),
@@ -43,10 +44,22 @@ class _StandingScreenState extends State<StandingScreen> {
                 primary: false,
                 physics: const NeverScrollableScrollPhysics(),
                 children: const [
-                  StandingHeader(),
+                  StandingHead(
+                    Logo: "assets/images/raimon.jpg",
+                    Title: "Squadra",
+                    Winning: 'W',
+                    Losing: 'L',
+                    GolScored: "GS",
+                    GolConcessed: "GC",
+                    Points: "P",
+                    isFavorite: false,
+                    position: 0,
+                  ),
                   Standing(
-                    Logo: "assets/images/man_united.png",
-                    Title: "Man United",
+                    Logo: "assets/images/raimon.jpg",
+                    Title: "Raimon",
+                    Winning: 1,
+                    Losing: 1,
                     GolScored: "30",
                     GolConcessed: "10",
                     Points: "30",
@@ -56,6 +69,8 @@ class _StandingScreenState extends State<StandingScreen> {
                   Standing(
                     Logo: "assets/images/stoke.png",
                     Title: "Stoke City",
+                    Winning: 1,
+                    Losing: 1,
                     GolScored: "27",
                     GolConcessed: "20",
                     Points: "26",
@@ -65,6 +80,8 @@ class _StandingScreenState extends State<StandingScreen> {
                   Standing(
                     Logo: "assets/images/southampton.png",
                     Title: "Southhampton",
+                    Winning: 1,
+                    Losing: 1,
                     GolScored: "20",
                     GolConcessed: "22",
                     Points: "18",
@@ -74,6 +91,8 @@ class _StandingScreenState extends State<StandingScreen> {
                   Standing(
                     Logo: "assets/images/liverpool.png",
                     Title: "Liverpool",
+                    Winning: 1,
+                    Losing: 1,
                     GolScored: "23",
                     GolConcessed: "27",
                     Points: "16",
@@ -83,6 +102,8 @@ class _StandingScreenState extends State<StandingScreen> {
                   Standing(
                     Logo: "assets/images/FCBarcelona.png",
                     Title: "Barcelona",
+                    Winning: 1,
+                    Losing: 1,
                     GolScored: "18",
                     GolConcessed: "24",
                     Points: "14",
@@ -92,6 +113,8 @@ class _StandingScreenState extends State<StandingScreen> {
                   Standing(
                     Logo: "assets/images/west_ham.png",
                     Title: "West Ham",
+                    Winning: 1,
+                    Losing: 1,
                     GolScored: "16",
                     GolConcessed: "22",
                     Points: "12",
@@ -101,6 +124,8 @@ class _StandingScreenState extends State<StandingScreen> {
                   Standing(
                     Logo: "assets/images/swansea.png",
                     Title: "Swansea AFC",
+                    Winning: 1,
+                    Losing: 1,
                     GolScored: "17",
                     GolConcessed: "27",
                     Points: "10",

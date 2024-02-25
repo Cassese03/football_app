@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:football_app/constants.dart';
 
 class ProfileCard extends StatelessWidget {
-  final double numero;
+  final int numero;
   final String content;
   const ProfileCard({
     super.key,

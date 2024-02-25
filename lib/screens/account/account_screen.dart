@@ -157,7 +157,7 @@ class _AccountScreenState extends State<AccountScreen> {
       child: Column(
         children: [
           Expanded(
-            flex: 20,
+            flex: 30,
             child: Row(
               children: [
                 const Spacer(),
@@ -201,22 +201,6 @@ class _AccountScreenState extends State<AccountScreen> {
                           fontSize: 20,
                         ),
                         'Lorenzo Cassese',
-                      ),
-                      Spacer(),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Spacer(),
-                      Text(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
-                        'Difensore Raimon',
                       ),
                       Spacer(),
                     ],
@@ -329,9 +313,9 @@ class _AccountScreenState extends State<AccountScreen> {
                   ),
                 ),
                 Stats(
-                  logo: "assets/images/tottenham.png",
-                  title: "Ranking",
-                  content: "10°",
+                  logo: "assets/images/raimon.jpg",
+                  title: "Squadra",
+                  content: "Raimon",
                   icon: Icon(
                     Icons.stars_outlined,
                     size: 28,

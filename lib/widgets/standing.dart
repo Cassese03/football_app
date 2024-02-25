@@ -6,6 +6,8 @@ class Standing extends StatelessWidget {
   final String Logo, Title, GolScored, GolConcessed, Points;
   final bool isFavorite;
   final int position;
+  final int Winning;
+  final int Losing;
   const Standing({
     super.key,
     required this.Logo,
@@ -13,6 +15,8 @@ class Standing extends StatelessWidget {
     required this.GolScored,
     required this.GolConcessed,
     required this.Points,
+    required this.Winning,
+    required this.Losing,
     required this.isFavorite,
     required this.position,
   });
@@ -37,7 +41,15 @@ class Standing extends StatelessWidget {
           ),
           child: Row(
             children: [
-              const SizedBox(width: 20),
+              const SizedBox(width: 10),
+              Text(
+                position.toString(),
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(width: 2),
               Expanded(
                 flex: 65,
                 child: Row(
@@ -52,13 +64,25 @@ class Standing extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    Text(
-                      Title,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey.shade700,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Column(
+                      children: [
+                        Text(
+                          Title,
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.grey.shade700,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '$GolScored / $GolConcessed',
+                          style: const TextStyle(
+                            fontSize: 12,
+                            color: kprimaryColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                     const Spacer(),
                   ],
@@ -72,7 +96,7 @@ class Standing extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          GolScored,
+                          Winning.toString(),
                           style: const TextStyle(
                             color: Colors.black,
                             fontSize: 18,
@@ -85,7 +109,7 @@ class Standing extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          GolConcessed,
+                          Losing.toString(),
                           style: const TextStyle(
                             color: Colors.black,
                             fontSize: 18,
@@ -163,11 +187,11 @@ class Standing extends StatelessWidget {
         isFavorite
             ? const Positioned(
                 top: 20,
-                left: 15,
+                left: 5,
                 child: Icon(
                   Iconsax.star5,
                   color: kprimaryColor,
-                  size: 15,
+                  size: 14,
                 ),
               )
             : const SizedBox(),
