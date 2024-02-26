@@ -18,7 +18,6 @@ class Notify extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.only(bottom: 15, top: 10),
-          width: double.infinity,
           padding: const EdgeInsets.symmetric(
             horizontal: 10,
             vertical: 15,
@@ -36,36 +35,44 @@ class Notify extends StatelessWidget {
                 flex: 90,
                 child: Row(
                   children: [
-                    Column(
-                      children: [
-                        Image.asset(
-                          Logo,
-                          height: 45,
-                          width: 45,
-                        ),
-                      ],
+                    Expanded(
+                      flex: 10,
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            Logo,
+                            height: 45,
+                            width: 45,
+                          ),
+                        ],
+                      ),
                     ),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Text(
-                          Title,
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.grey.shade700,
-                            fontWeight: FontWeight.bold,
+                    Expanded(
+                      flex: 90,
+                      child: Column(
+                        children: [
+                          Text(
+                            Title,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.grey.shade700,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        Text(
-                          Content,
-                          overflow: TextOverflow.clip,
-                          style: const TextStyle(
-                            fontSize: 12,
-                            color: kprimaryColor,
-                            fontWeight: FontWeight.bold,
+                          Text(
+                            Content,
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.clip,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              color: kprimaryColor,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const Spacer(),
                   ],
