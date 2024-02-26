@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:football_app/constants.dart';
 import 'package:football_app/screens/main_screen.dart';
+import 'package:football_app/screens/notification_screen.dart';
 import 'package:iconsax/iconsax.dart';
 
 class AppbarAll extends StatelessWidget implements PreferredSizeWidget {
@@ -54,51 +55,14 @@ class AppbarAll extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           onPressed: () {
-            //   showDialog(
-            //     context: context,
-            //     builder: (context) => Stack(
-            //       children: [
-            //         Positioned(
-            //           width: 50,
-            //           child: Column(
-            //             children: [
-            //               const Card(
-            //                 color: kprimaryColor,
-            //                 child: Text('Notifica'),
-            //               ),
-            //               const Card(
-            //                 color: kprimaryColor,
-            //                 child: Text('Notifica'),
-            //               ),
-            //               const Card(
-            //                 color: kprimaryColor,
-            //                 child: Text('Notifica'),
-            //               ),
-            //               const Card(
-            //                 color: kprimaryColor,
-            //                 child: Text('Notifica'),
-            //               ),
-            //               const Card(
-            //                 color: kprimaryColor,
-            //                 child: Text('Notifica'),
-            //               ),
-            //               ElevatedButton(
-            //                 onPressed: () => Navigator.pop(context),
-            //                 child: const Text(
-            //                   'Chiudi',
-            //                 ),
-            //               )
-            //             ],
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-            //   ).then((valueFromDialog) {
-            //     // use the value as you wish
-            //     print(valueFromDialog);
-            //   });
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const NotificationScreen(),
+              ),
+            );
           },
-          icon: const Icon(Iconsax.notification),
+          icon: const Icon(Icons.notifications_active_outlined),
         ),
       ],
     );
