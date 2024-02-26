@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:football_app/common/drawer.dart';
 import 'package:football_app/constants.dart';
 import 'package:football_app/screens/account/account_screen.dart';
 import 'package:football_app/screens/calendar_screen.dart';
@@ -6,15 +7,18 @@ import 'package:football_app/screens/home_screen.dart';
 import 'package:football_app/screens/standing_screen.dart';
 import 'package:iconsax/iconsax.dart';
 
+final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+// ignore: must_be_immutable
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+  int currentTab;
+  MainScreen({super.key, required this.currentTab});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int currentTab = 0;
   List screens = [
     const HomeScreen(),
     const CalendarScreen(),
@@ -25,6 +29,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       bottomNavigationBar: Container(
         padding: const EdgeInsets.only(top: 10),
         width: double.infinity,
@@ -45,47 +50,48 @@ class _MainScreenState extends State<MainScreen> {
             BottomNavItem(
               title: "Home",
               icon: Iconsax.home,
-              isActive: currentTab == 0,
+              isActive: widget.currentTab == 0,
               onTap: () {
                 setState(() {
-                  currentTab = 0;
+                  widget.currentTab = 0;
                 });
               },
             ),
             BottomNavItem(
               title: "Calender",
               icon: Iconsax.calendar_1,
-              isActive: currentTab == 1,
+              isActive: widget.currentTab == 1,
               onTap: () {
                 setState(() {
-                  currentTab = 1;
+                  widget.currentTab = 1;
                 });
               },
             ),
             BottomNavItem(
               title: "Standing",
               icon: Iconsax.chart,
-              isActive: currentTab == 2,
+              isActive: widget.currentTab == 2,
               onTap: () {
                 setState(() {
-                  currentTab = 2;
+                  widget.currentTab = 2;
                 });
               },
             ),
             BottomNavItem(
               title: "Account",
               icon: Iconsax.profile_circle,
-              isActive: currentTab == 3,
+              isActive: widget.currentTab == 3,
               onTap: () {
                 setState(() {
-                  currentTab = 3;
+                  widget.currentTab = 3;
                 });
               },
             ),
           ],
         ),
       ),
-      body: screens[currentTab],
+      body: screens[widget.currentTab],
+      drawer: const DrawerLorenzo(),
     );
   }
 }

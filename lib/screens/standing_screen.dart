@@ -15,7 +15,7 @@ class _StandingScreenState extends State<StandingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppbarAll(),
+      appBar: AppbarAll(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

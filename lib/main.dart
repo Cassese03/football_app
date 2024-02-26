@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Footbal Frontier',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: "TitilliumWeb",
+        fontFamily: "PlusJakartaSans",
         scaffoldBackgroundColor: kbackgroundColor,
         appBarTheme: const AppBarTheme(color: kbackgroundColor),
         colorScheme: ColorScheme.fromSeed(
@@ -23,7 +23,9 @@ class MyApp extends StatelessWidget {
           background: kbackgroundColor,
         ),
       ),
-      home: const MainScreen(),
+      home: MainScreen(
+        currentTab: 0,
+      ),
     );
   }
 }

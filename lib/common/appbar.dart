@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/constants.dart';
+import 'package:football_app/screens/main_screen.dart';
 import 'package:iconsax/iconsax.dart';
 
 class AppbarAll extends StatelessWidget implements PreferredSizeWidget {
-  const AppbarAll({
+  AppbarAll({
     super.key,
   });
 
@@ -11,7 +12,9 @@ class AppbarAll extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          scaffoldKey.currentState!.openDrawer();
+        },
         icon: const Icon(Iconsax.category),
       ),
       title: const Row(

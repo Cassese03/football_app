@@ -17,7 +17,7 @@ class _AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppbarAll(),
+      appBar: AppbarAll(),
       body: BlocProvider(
         create: (context) => AccountBloc(),
         child: Builder(builder: (context) {
