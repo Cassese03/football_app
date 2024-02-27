@@ -50,8 +50,11 @@ class Notify extends StatelessWidget {
           ),
           Row(
             children: [
-              const Spacer(),
+              const Spacer(
+                flex: 5,
+              ),
               Expanded(
+                flex: 90,
                 child: Column(
                   children: [
                     Text(
@@ -76,7 +79,9 @@ class Notify extends StatelessWidget {
                   ],
                 ),
               ),
-              const Spacer(),
+              const Spacer(
+                flex: 5,
+              ),
             ],
           ),
         ],

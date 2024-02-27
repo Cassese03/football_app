@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/constants.dart';
 import 'package:football_app/screens/main_screen.dart';
+import 'package:provider/provider.dart';
+
+import 'providers/players_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider.value(value: PlayersProvider())],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

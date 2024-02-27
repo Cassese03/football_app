@@ -33,7 +33,10 @@ class UpComingLorenzo extends StatelessWidget {
             );
           },
           child: Container(
-            margin: const EdgeInsets.only(bottom: 10),
+            margin: const EdgeInsets.only(
+              bottom: 10,
+              top: 5,
+            ),
             padding: const EdgeInsets.symmetric(
               horizontal: 10,
               vertical: 15,
