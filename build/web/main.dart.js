@@ -27538,7 +27538,7 @@ aSj(a){var s=0,r=A.T(t.z),q,p=2,o,n,m,l,k,j,i
 var $async$asD=A.U(function(b,c){if(b===1){o=c
 s=p}while(true)switch(s){case 0:p=4
 s=7
-return A.a2($.HM().ajE("/"+a+".json"),$async$asD)
+return A.a2($.HM().ajE("/images/"+a+".json"),$async$asD)
 case 7:n=c
 m=B.d3.Sf(0,n,null)
 l=J.bq(m,"players")
