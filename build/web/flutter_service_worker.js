@@ -3,9 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "c1a9f79443980f2d8fa5be927fe21728",
-"assets/AssetManifest.bin.json": "fd3f5891c025a0563ac1d0952cdc718a",
-"assets/AssetManifest.json": "7e6d14bb98d729a3b37986b8e827a3f3",
+const RESOURCES = {"assets/AssetManifest.bin": "09f0bafcce589ebb26aaa42791c0dbcf",
+"assets/AssetManifest.bin.json": "f5e0f4d933a368a97ed61c6d5cfa9be3",
+"assets/AssetManifest.json": "ead4ab3d9e8d75fc2b8551c685473fa2",
 "assets/assets/images/arsenal.png": "c1e6db3d34dfb7573b971451c8d714c1",
 "assets/assets/images/Bayern.png": "6eb39cfa301ab2493aac8e8f1878fc19",
 "assets/assets/images/chelsea.png": "2f8867be37544e4fdb1d66a82bfcefc1",
@@ -16,6 +16,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "c1a9f79443980f2d8fa5be927fe21728
 "assets/assets/images/man_united.png": "dec60178a20bb0e792c2be94b0057ffd",
 "assets/assets/images/pl.png": "f6cc6cab6f67f97c939810869180922e",
 "assets/assets/images/raimon.jpg": "0c3a81acd5862764305cea38070b83d9",
+"assets/assets/images/raimon_perde.jpg": "dcc0330b0d1eb5fcb3eb560c0faadd2f",
 "assets/assets/images/southampton.png": "4225cb6e64b3c5b509989b08c66a158b",
 "assets/assets/images/stoke.png": "813dcae8bf080becd04c8b55a50c8724",
 "assets/assets/images/sunderland.png": "26f3141f71a22453eb123d3036d287c3",
@@ -69,9 +70,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "c1a9f79443980f2d8fa5be927fe21728
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "703bccf75d9d36f012d6a1598ce9b4af",
-"/": "703bccf75d9d36f012d6a1598ce9b4af",
-"main.dart.js": "22f942adcc52db0348eeeffa0e77cfa0",
+"index.html": "c2a75c9792144e2ed39d823d99aaf357",
+"/": "c2a75c9792144e2ed39d823d99aaf357",
+"main.dart.js": "bd7cd3c5c62680152783bc932bca4706",
 "manifest.json": "151ccd9266762df03c0a36c000a70d57",
 "version.json": "abce5f5ec41188d0169babaa720dc38a"};
 // The application shell files that are downloaded before a service worker can

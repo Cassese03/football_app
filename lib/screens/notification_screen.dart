@@ -38,7 +38,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Notify(
-                Logo: "assets/images/raimon.jpg",
+                Logo: "assets/images/raimon_perde.jpg",
                 Title: "Dura Sconfitta",
                 Content:
                     "Dura sconfitta per la Raimon, IMMERITATA!!! Testa alla PROSSIMA!",
