@@ -15,11 +15,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppbarNotify(),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(15),
               child: Row(
                 children: [
@@ -36,28 +36,34 @@ class _NotificationScreenState extends State<NotificationScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: ListView(
-                shrinkWrap: true,
-                primary: false,
-                physics: const NeverScrollableScrollPhysics(),
-                children: const [
-                  Notify(
-                    Logo: "assets/images/raimon.jpg",
-                    Title: "Attilio Ma che Combini ?!",
-                    Content: "Attilio ha scopato una vecchia. Incredibile!!!",
-                    Read: 0,
-                  ),
-                  Notify(
-                    Logo: "assets/images/raimon.jpg",
-                    Title: "Capocannoniere Insolito",
-                    Content:
-                        "Per favore non fate segnare Agostino, mi sembra uno zoppo che corre.",
-                    Read: 1,
-                  ),
-                ],
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Notify(
+                Logo: "assets/images/raimon.jpg",
+                Title: "Dura Sconfitta",
+                Content:
+                    "Dura sconfitta per la Raimon, IMMERITATA!!! Testa alla PROSSIMA!",
+                Read: 0,
               ),
-            )
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Notify(
+                Logo: "assets/images/raimon.jpg",
+                Title: "Attilio Ma che Combini ?!",
+                Content: "Attilio ha scopato una vecchia. Incredibile!!!",
+                Read: 0,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Notify(
+                Logo: "assets/images/raimon.jpg",
+                Title: "Capocannoniere Insolito",
+                Content:
+                    "Per favore non fate segnare Agostino, mi sembra uno zoppo che corre.",
+                Read: 1,
+              ),
+            ),
           ],
         ),
       ),
