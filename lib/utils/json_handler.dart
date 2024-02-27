@@ -30,7 +30,7 @@ Map<String, dynamic> _toJson(Player player) {
 
 Future<dynamic> loadFormationFromAssets(String squad) async {
   try {
-    String json = await rootBundle.loadString("/tactics/$squad.json");
+    String json = await rootBundle.loadString("/$squad.json");
     var jsonBody = jsonDecode(json);
     List<dynamic> _players = jsonBody['players'];
     return _players;
