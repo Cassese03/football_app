@@ -22,10 +22,11 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   List screens = [
-    StadiumScreen(),
+    const HomeScreen(),
     const CalendarScreen(),
     const StandingScreen(),
     const AccountScreen(),
+    StadiumScreen(),
   ];
 
   @override
@@ -86,6 +87,16 @@ class _MainScreenState extends State<MainScreen> {
               onTap: () {
                 setState(() {
                   widget.currentTab = 3;
+                });
+              },
+            ),
+            BottomNavItem(
+              title: "Formazione",
+              icon: Icons.stadium,
+              isActive: widget.currentTab == 4,
+              onTap: () {
+                setState(() {
+                  widget.currentTab = 4;
                 });
               },
             ),
