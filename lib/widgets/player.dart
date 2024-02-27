@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:football_app/constants.dart';
 import 'package:football_app/constants/text_styles.dart';
 import 'package:football_app/providers/players_provider.dart';
 import 'package:provider/provider.dart';
@@ -78,7 +79,7 @@ class _PlayerState extends State<Player> {
             Consumer<PlayersProvider>(
               builder: (__, provider, _) => CustomPaint(
                 size: Size(45, (45 * 1.0680100755667505).toDouble()),
-                painter: PlayerMailot(color: provider.color),
+                painter: PlayerMailot(color: kprimaryColor),
               ),
             ),
             SizedBox(height: 8.0),

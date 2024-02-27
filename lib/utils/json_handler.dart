@@ -23,8 +23,8 @@ playerToJson(List<Player> players) {
 
 Map<String, dynamic> _toJson(Player player) {
   final Map<String, dynamic> data = Map<String, dynamic>();
-  data['x'] = player.coordinates.dx ?? 0.0;
-  data['y'] = player.coordinates.dy ?? 0.0;
+  data['x'] = player.coordinates.dx;
+  data['y'] = player.coordinates.dy;
   return data;
 }
 

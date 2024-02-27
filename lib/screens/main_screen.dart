@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/common/drawer.dart';
 import 'package:football_app/constants.dart';
-import 'package:football_app/screens/StadiumScreen.dart';
+import 'package:football_app/screens/stadium_screen.dart';
 import 'package:football_app/screens/account/account_screen.dart';
 import 'package:football_app/screens/calendar_screen.dart';
 import 'package:football_app/screens/home_screen.dart';
 import 'package:football_app/screens/standing_screen.dart';
-import 'package:football_app/widgets/main.dart';
 import 'package:iconsax/iconsax.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
