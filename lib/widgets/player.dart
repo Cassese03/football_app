@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:football_app/constants.dart';
 import 'package:football_app/constants/text_styles.dart';
@@ -21,6 +23,8 @@ class _PlayerState extends State<Player> {
   final GlobalKey _key = GlobalKey();
   double top = 0.0, left = 0.0;
   double xOff = 0.0, yOff = 0.0;
+
+  String nome = 'Player';
 
   @override
   void initState() {
@@ -74,30 +78,57 @@ class _PlayerState extends State<Player> {
 
   Widget _playerSpot() => Material(
         type: MaterialType.transparency,
-        child: Column(
-          children: [
-            Consumer<PlayersProvider>(
-              builder: (__, provider, _) => CustomPaint(
-                size: Size(45, (45 * 1.0680100755667505).toDouble()),
-                painter: PlayerMailot(color: kprimaryColor),
+        child: GestureDetector(
+          onTap: () => showDialog(
+            context: context,
+            builder: (builder) {
+              TextEditingController nome = TextEditingController();
+              return AlertDialog(
+                actions: [
+                  TextField(
+                    controller: nome,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context, nome.text);
+                    },
+                    child: const Text('Salva'),
+                  ),
+                ],
+                title: const Text('Inserire Nome Giocatore'),
+              );
+            },
+          ).then(
+            (value) {
+              setState(() {
+                nome = value;
+              });
+            },
+          ),
+          child: Column(
+            children: [
+              Consumer<PlayersProvider>(
+                builder: (__, provider, _) => CustomPaint(
+                  size: Size(45, (45 * 1.0680100755667505).toDouble()),
+                  painter: PlayerMailot(color: kprimaryColor),
+                ),
               ),
-            ),
-            SizedBox(height: 8.0),
-            SizedBox(
-              child: _playerName(),
-              width: MediaQuery.of(context).size.width * 0.2,
-            ),
-          ],
+              SizedBox(height: 8.0),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.2,
+                child: _playerName(),
+              ),
+            ],
+          ),
         ),
       );
 
-  Widget _playerName() => EditableText(
-        maxLines: 1,
+  Widget _playerName() => Text(
+        nome,
         textAlign: TextAlign.center,
-        backgroundCursorColor: Colors.amber,
-        cursorColor: Colors.green,
         style: playerName(),
-        focusNode: FocusNode(),
-        controller: controller,
       );
 }

@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-TextStyle playerName() => TextStyle(
+TextStyle playerName() => const TextStyle(
       color: Colors.white,
       decorationThickness: 0.001,
     );
