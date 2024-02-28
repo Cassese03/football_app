@@ -59,6 +59,8 @@ class _StadiumScreenState extends State<StadiumScreen> {
         child: Consumer<PlayersProvider>(
           builder: (_, provider, child) => Center(
             child: Container(
+              height: 700,
+              width: 350,
               child: RepaintBoundary(
                 key: screenShotKey,
                 child: Stack(

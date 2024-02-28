@@ -60,7 +60,6 @@ class _PlayerState extends State<Player> {
       top: top,
       left: left,
       child: Draggable(
-        child: _playerSpot(),
         feedback: _playerSpot(),
         childWhenDragging: Container(),
         onDraggableCanceled: (_, drag) {
@@ -68,10 +67,13 @@ class _PlayerState extends State<Player> {
             () {
               top = drag.dy - yOff;
               left = drag.dx - xOff;
+              log('left = $left');
+              log('top = $top');
               widget.coordinates = Offset(left, top);
             },
           );
         },
+        child: _playerSpot(),
       ),
     );
   }
