@@ -19,7 +19,6 @@ class Player extends StatefulWidget {
 }
 
 class _PlayerState extends State<Player> {
-  TextEditingController controller = TextEditingController(text: 'Player');
   final GlobalKey _key = GlobalKey();
   double top = 0.0, left = 0.0;
   double xOff = 0.0, yOff = 0.0;
@@ -35,9 +34,7 @@ class _PlayerState extends State<Player> {
   }
 
   @override
-  
   void dispose() {
-    controller.dispose();
     super.dispose();
   }
 
@@ -45,7 +42,6 @@ class _PlayerState extends State<Player> {
     final RenderBox renderBoxWidget =
         _key.currentContext?.findRenderObject() as RenderBox;
     final offset = renderBoxWidget.localToGlobal(Offset.zero);
-
     yOff = offset.dy - top;
     xOff = offset.dx - left;
   }
@@ -60,10 +56,13 @@ class _PlayerState extends State<Player> {
       key: _key,
       top: top,
       left: left,
+      height: 400,
+      width: 400,
       child: Draggable(
         feedback: _playerSpot(),
         childWhenDragging: Container(),
         onDraggableCanceled: (_, drag) {
+          return;
           setState(
             () {
               top = drag.dy - yOff;

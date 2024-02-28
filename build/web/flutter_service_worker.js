@@ -3,12 +3,12 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "2e38d284311298e6a94ced7a901fbd8d",
-"assets/AssetManifest.bin.json": "b958c967a18e3be10e7a13ac04df927b",
-"assets/AssetManifest.json": "91b763c2fd452f48ffd5588e18075654",
+const RESOURCES = {"assets/AssetManifest.bin": "32a8dc19b63ecdc8d217b5730cf2f232",
+"assets/AssetManifest.bin.json": "203417b77805c6c77586d8e4aa765e42",
+"assets/AssetManifest.json": "f2a34416e57201fd3cf940dabe6e665d",
+"assets/assets/images/2-3-2.json": "1460ceebaa17d9585153ad15a1db283a",
 "assets/assets/images/4-2-3-1.json": "1498e6a8acdd6b36a3751fc7e711c78b",
 "assets/assets/images/4-3-3.json": "05e39b12f865a4e42960857fbd7586f3",
-"assets/assets/images/4-4-2.json": "b432d8ebc04009acbc8086d6fdf2ae5e",
 "assets/assets/images/arsenal.png": "c1e6db3d34dfb7573b971451c8d714c1",
 "assets/assets/images/Bayern.png": "6eb39cfa301ab2493aac8e8f1878fc19",
 "assets/assets/images/chelsea.png": "2f8867be37544e4fdb1d66a82bfcefc1",
@@ -77,9 +77,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "2e38d284311298e6a94ced7a901fbd8d
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "4d4e79ac27aa8b58abdfe3bb9c31c0a5",
-"/": "4d4e79ac27aa8b58abdfe3bb9c31c0a5",
-"main.dart.js": "6ae153a34d957751f8dfdaeb8925a5cd",
+"index.html": "6dfeaebb448a12e340e9445d6096f3c9",
+"/": "6dfeaebb448a12e340e9445d6096f3c9",
+"main.dart.js": "e28cbcbe2306f37b96072ae3af4cebfa",
 "manifest.json": "151ccd9266762df03c0a36c000a70d57",
 "version.json": "abce5f5ec41188d0169babaa720dc38a"};
 // The application shell files that are downloaded before a service worker can

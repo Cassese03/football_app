@@ -48,7 +48,7 @@ class _StadiumScreenState extends State<StadiumScreen> {
   @override
   void initState() {
     super.initState();
-    _readTactics("4-4-2");
+    _readTactics("2-3-2");
   }
 
   @override
@@ -58,8 +58,7 @@ class _StadiumScreenState extends State<StadiumScreen> {
       body: SafeArea(
         child: Center(
           child: Container(
-            color: Colors.red,
-            height: 700,
+            height: 400,
             width: 400,
             child: Consumer<PlayersProvider>(
               builder: (_, provider, child) => RepaintBoundary(

@@ -17,9 +17,9 @@ class BottomPanel extends StatefulWidget {
 
 class _BottomPanelState extends State<BottomPanel> {
   List<String> tactics = [
-    "4-4-2",
-    "4-3-3",
-    "4-2-3-1",
+    "2-3-2",
+    // "4-3-3",
+    // "4-2-3-1",
   ];
 
   late String selectedTactic;
