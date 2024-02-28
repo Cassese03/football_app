@@ -56,14 +56,16 @@ class _StadiumScreenState extends State<StadiumScreen> {
     return Scaffold(
       appBar: AppbarAll(),
       body: SafeArea(
-        child: Consumer<PlayersProvider>(
-          builder: (_, provider, child) => Center(
-            child: Container(
-              height: 700,
-              width: 400,
-              child: RepaintBoundary(
+        child: Center(
+          child: Container(
+            color: Colors.red,
+            height: 700,
+            width: 400,
+            child: Consumer<PlayersProvider>(
+              builder: (_, provider, child) => RepaintBoundary(
                 key: screenShotKey,
                 child: Stack(
+                  fit: StackFit.expand,
                   children: [
                     Stadium(),
                     ...provider.players,

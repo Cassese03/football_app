@@ -35,6 +35,7 @@ class _PlayerState extends State<Player> {
   }
 
   @override
+  
   void dispose() {
     controller.dispose();
     super.dispose();
@@ -45,8 +46,8 @@ class _PlayerState extends State<Player> {
         _key.currentContext?.findRenderObject() as RenderBox;
     final offset = renderBoxWidget.localToGlobal(Offset.zero);
 
-    yOff = offset.dy - this.top;
-    xOff = offset.dx - this.left;
+    yOff = offset.dy - top;
+    xOff = offset.dx - left;
   }
 
   void _afterLayout(_) {
