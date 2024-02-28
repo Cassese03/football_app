@@ -93,12 +93,12 @@ class _BottomPanelState extends State<BottomPanel> {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                IconButton(
-                    onPressed: () {
-                      _showDialog();
-                    },
-                    icon:
-                        Icon(Icons.color_lens, color: Colors.red, size: 30.0)),
+                // IconButton(
+                // onPressed: () {
+                // _showDialog();
+                // },
+                // icon:
+                // Icon(Icons.color_lens, color: Colors.red, size: 30.0)),
                 SizedBox(width: 10.0),
                 TextButton(
                   style: ButtonStyle(

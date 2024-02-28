@@ -24,8 +24,8 @@ class _MainScreenState extends State<MainScreen> {
     const HomeScreen(),
     const CalendarScreen(),
     const StandingScreen(),
-    const AccountScreen(),
     StadiumScreen(),
+    const AccountScreen(),
   ];
 
   @override
@@ -80,8 +80,8 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             BottomNavItem(
-              title: "Account",
-              icon: Iconsax.profile_circle,
+              title: "Lineup",
+              icon: Icons.stadium,
               isActive: widget.currentTab == 3,
               onTap: () {
                 setState(() {
@@ -90,8 +90,8 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             BottomNavItem(
-              title: "Formazione",
-              icon: Icons.stadium,
+              title: "Account",
+              icon: Iconsax.profile_circle,
               isActive: widget.currentTab == 4,
               onTap: () {
                 setState(() {

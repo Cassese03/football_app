@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/constants.dart';
 import 'package:football_app/screens/main_screen.dart';
+import 'package:football_app/screens/settings_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/players_provider.dart';
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
           background: kbackgroundColor,
         ),
       ),
-      home: MainScreen(
+      home: //SettingsScreen(),
+          MainScreen(
         currentTab: 0,
       ),
     );

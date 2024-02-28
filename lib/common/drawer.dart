@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/constants.dart';
 import 'package:football_app/screens/main_screen.dart';
+import 'package:football_app/screens/settings_screen.dart';
 
 class DrawerLorenzo extends StatelessWidget implements PreferredSizeWidget {
   const DrawerLorenzo({
@@ -92,11 +93,11 @@ class DrawerLorenzo extends StatelessWidget implements PreferredSizeWidget {
                     ),
                     ListTile(
                       leading: const Icon(
-                        Icons.emoji_people,
+                        Icons.stadium,
                         color: Colors.black,
                       ),
                       title: Text(
-                        'Account',
+                        'Formazioni',
                         style: textStyleListTile(),
                       ),
                       onTap: () {
@@ -113,6 +114,27 @@ class DrawerLorenzo extends StatelessWidget implements PreferredSizeWidget {
                     ),
                     ListTile(
                       leading: const Icon(
+                        Icons.emoji_people,
+                        color: Colors.black,
+                      ),
+                      title: Text(
+                        'Account',
+                        style: textStyleListTile(),
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MainScreen(
+                              currentTab: 4,
+                            ),
+                          ),
+                        );
+                        scaffoldKey.currentState!.closeDrawer();
+                      },
+                    ),
+                    ListTile(
+                      leading: const Icon(
                         Icons.settings,
                         color: Colors.black,
                       ),
@@ -120,7 +142,14 @@ class DrawerLorenzo extends StatelessWidget implements PreferredSizeWidget {
                         'Impostazioni',
                         style: textStyleListTile(),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SettingsScreen(),
+                          ),
+                        );
+                      },
                     ),
                     ListTile(
                       leading: const Icon(
