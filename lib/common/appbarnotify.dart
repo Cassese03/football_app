@@ -3,8 +3,10 @@ import 'package:flutter/widgets.dart';
 import 'package:football_app/constants.dart';
 
 class AppbarNotify extends StatelessWidget implements PreferredSizeWidget {
+  int currentColor;
   AppbarNotify({
     super.key,
+    required this.currentColor,
   });
 
   @override
@@ -16,10 +18,10 @@ class AppbarNotify extends StatelessWidget implements PreferredSizeWidget {
         },
         icon: const Icon(Icons.arrow_back),
       ),
-      title: const Row(
+      title: Row(
         children: [
-          Spacer(),
-          Text(
+          const Spacer(),
+          const Text(
             "F",
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -27,13 +29,13 @@ class AppbarNotify extends StatelessWidget implements PreferredSizeWidget {
           ),
           Icon(
             Icons.sports_soccer,
-            color: kprimaryColor,
+            color: Color(currentColor),
           ),
           Icon(
             Icons.sports_soccer,
-            color: kprimaryColor,
+            color: Color(currentColor),
           ),
-          Text(
+          const Text(
             "tball  ",
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -42,11 +44,11 @@ class AppbarNotify extends StatelessWidget implements PreferredSizeWidget {
           Text(
             "Frontier",
             style: TextStyle(
-              color: kprimaryColor,
+              color: Color(currentColor),
               fontWeight: FontWeight.bold,
             ),
           ),
-          Spacer(),
+          const Spacer(),
         ],
       ),
       actions: [

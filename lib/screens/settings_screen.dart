@@ -1,6 +1,7 @@
-import 'dart:math';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:football_app/common/appbarnotify.dart';
 import 'package:football_app/constants.dart';
@@ -14,24 +15,30 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  final Future<SharedPreferences> prefs = SharedPreferences.getInstance();
-  Color currentColor = kprimaryColor;
+  int currentColor = kprimaryColor.value;
   @override
   void initState() {
     super.initState();
-    String ciao = prefs.then(
-      (SharedPreferences prefs) {
-        return prefs.getString('primaryColor') ?? kprimaryColor.toString();
-      },
-    ) as String;
+    check();
+  }
 
-    print(ciao);
+  Future<void> check() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var check = prefs.getInt('primaryColor');
+    if (check != null) {
+      setState(() {
+        currentColor = check;
+      });
+    }
+    log(check.toString());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarNotify(),
+      appBar: AppbarNotify(
+        currentColor: currentColor,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -77,16 +84,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     'Salva',
                                   ),
                                   onPressed: () async {
-                                    prefs.then(
-                                      (SharedPreferences prefs) {
-                                        return prefs.setString(
-                                          'primaryColor',
-                                          value.toString(),
-                                        );
-                                      },
+                                    SharedPreferences prefs =
+                                        await SharedPreferences.getInstance();
+                                    await prefs.setInt(
+                                      'primaryColor',
+                                      value.value,
                                     );
-                                    setState(() {});
-                                    Navigator.of(context).pop();
+                                    setState(() {
+                                      currentColor = value.value;
+                                      Navigator.of(context).pop();
+                                    });
                                   },
                                 ),
                               ],
@@ -95,14 +102,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         },
                         icon: Icon(
                           Icons.color_lens,
-                          color: currentColor,
+                          color: Color(currentColor),
                           size: 30.0,
                         ),
                       ),
                       Container(
                         height: 50,
                         width: 50,
-                        color: currentColor,
+                        color: Color(currentColor),
                       ),
                       const Spacer(),
                     ],

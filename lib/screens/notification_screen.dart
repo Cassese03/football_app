@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:football_app/common/appbarnotify.dart';
 import 'package:football_app/constants.dart';
 import 'package:football_app/widgets/notify.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -11,10 +12,29 @@ class NotificationScreen extends StatefulWidget {
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
+  int currentColor = kprimaryColor.value;
+  @override
+  void initState() {
+    super.initState();
+    check();
+  }
+
+  Future<void> check() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var check = prefs.getInt('primaryColor');
+    if (check != null) {
+      setState(() {
+        currentColor = check;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarNotify(),
+      appBar: AppbarNotify(
+        currentColor: currentColor,
+      ),
       body: const SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -7,6 +7,7 @@ import 'package:football_app/screens/calendar_screen.dart';
 import 'package:football_app/screens/home_screen.dart';
 import 'package:football_app/screens/standing_screen.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -20,6 +21,23 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  int currentColor = kprimaryColor.value;
+  @override
+  void initState() {
+    super.initState();
+    check();
+  }
+
+  Future<void> check() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var check = prefs.getInt('primaryColor');
+    if (check != null) {
+      setState(() {
+        currentColor = check;
+      });
+    }
+  }
+
   List screens = [
     const HomeScreen(),
     const CalendarScreen(),
@@ -50,6 +68,7 @@ class _MainScreenState extends State<MainScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             BottomNavItem(
+              currentColor: currentColor,
               title: "Home",
               icon: Iconsax.home,
               isActive: widget.currentTab == 0,
@@ -60,6 +79,7 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             BottomNavItem(
+              currentColor: currentColor,
               title: "Calender",
               icon: Iconsax.calendar_1,
               isActive: widget.currentTab == 1,
@@ -70,6 +90,7 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             BottomNavItem(
+              currentColor: currentColor,
               title: "Standing",
               icon: Iconsax.chart,
               isActive: widget.currentTab == 2,
@@ -80,6 +101,7 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             BottomNavItem(
+              currentColor: currentColor,
               title: "Lineup",
               icon: Icons.stadium,
               isActive: widget.currentTab == 3,
@@ -90,6 +112,7 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             BottomNavItem(
+              currentColor: currentColor,
               title: "Account",
               icon: Iconsax.profile_circle,
               isActive: widget.currentTab == 4,
@@ -113,9 +136,11 @@ class BottomNavItem extends StatelessWidget {
   final bool isActive;
   final Function() onTap;
   final IconData icon;
+  final int currentColor;
   const BottomNavItem({
     super.key,
     required this.title,
+    required this.currentColor,
     required this.isActive,
     required this.onTap,
     required this.icon,
@@ -129,7 +154,7 @@ class BottomNavItem extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: isActive ? kprimaryColor : kbackgroundColor,
+          color: isActive ? Color(currentColor) : kbackgroundColor,
           borderRadius: const BorderRadius.only(
             topRight: Radius.circular(20),
             topLeft: Radius.circular(20),
